@@ -11,7 +11,7 @@ namespace ECS.Modules.Exerussus.TransformRelay
         
         protected override void SetFixedUpdateSystems(IEcsSystems fixedUpdateSystems)
         {
-            fixedUpdateSystems.Add(new TransformRelaySystem());
+            fixedUpdateSystems.Add(new TransformRelaySystem(Settings));
         }
     }
 }

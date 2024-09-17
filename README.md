@@ -15,6 +15,20 @@
         }
 ````
 
+Доступные настройки:
+
+````csharp
+    public class TransformRelaySettings
+    {
+        /// <summary> В каком апдейте производится работа. </summary>
+        public UpdateType Update = UpdateType.FixedUpdate;
+        /// <summary>
+        /// Если включено - transform получает значения Position, в противном случае
+        /// Position будет приравниваться к Transform.
+        /// </summary>
+        public bool IsPositionOrigin = true;
+    }
+````
 Зависимости:  
 [Ecs-Lite](https://github.com/Leopotam/ecslite.git)  
 [1EasyEcs](https://github.com/exerussus/1EasyEcs.git)   
