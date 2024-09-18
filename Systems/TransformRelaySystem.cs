@@ -12,7 +12,7 @@ namespace ECS.Modules.Exerussus.TransformRelay.Systems
             _settings = settings;
         }
 
-        private TransformRelaySettings _settings;
+        private readonly TransformRelaySettings _settings;
         private EcsFilter _transformData;
         private MovementPooler _movementPooler;
         private Action<int> _updateAction;
