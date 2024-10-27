@@ -8,13 +8,23 @@ namespace ECS.Modules.Exerussus.TransformRelay
 {
     public class TransformRelayGroup : EcsGroup<TransformRelayPooler>
     {
-        public TransformRelaySettings Settings = new();
+        private TransformRelaySettings Settings = new();
         
         protected override void SetFixedUpdateSystems(IEcsSystems fixedUpdateSystems)
         {
-            fixedUpdateSystems.Add(new TransformRelaySystem(Settings));
+            if (Settings.Update == UpdateType.FixedUpdate) fixedUpdateSystems.Add(new TransformRelaySystem());
         }
-        
+
+        protected override void SetUpdateSystems(IEcsSystems updateSystems)
+        {
+            if (Settings.Update == UpdateType.Update) updateSystems.Add(new TransformRelaySystem());
+        }
+
+        protected override void SetSharingData(EcsWorld world, GameShare gameShare)
+        {
+            gameShare.AddSharedObject(Settings);
+        }
+
         public TransformRelayGroup SetUpdateType(UpdateType updateType)
         {
             Settings.Update = updateType;

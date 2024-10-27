@@ -7,20 +7,15 @@ namespace ECS.Modules.Exerussus.TransformRelay.Systems
 {
     public class TransformRelaySystem : EasySystem<TransformRelayPooler>
     {
-        public TransformRelaySystem(TransformRelaySettings settings)
-        {
-            _settings = settings;
-        }
-
-        private readonly TransformRelaySettings _settings;
+        [InjectSharedObject] private TransformRelaySettings _settings;
+        [InjectSharedObject] private MovementPooler _movementPooler;
         private EcsFilter _transformData;
-        private MovementPooler _movementPooler;
         private Action<int> _updateAction;
         
         protected override void Initialize()
         {
             _transformData = World.Filter<TransformRelayData.Transform>().Inc<MovementData.Position>().End();
-            GameShare.GetSharedObject(ref _movementPooler);
+
             if (_settings.IsPositionOrigin)
             {
                 _updateAction = entity =>
