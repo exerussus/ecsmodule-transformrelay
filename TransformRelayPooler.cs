@@ -19,9 +19,9 @@ namespace ECS.Modules.Exerussus.TransformRelay
 
         public void CreateBaseData(int entity, Transform transform)
         {
-            ref var positionData = ref _movementPooler.Position.Add(entity);
+            ref var positionData = ref _movementPooler.Position.AddOrGet(entity);
             positionData.Value = transform.position;
-            ref var transformRelayData = ref Transform.Add(entity);
+            ref var transformRelayData = ref Transform.AddOrGet(entity);
             transformRelayData.Value = transform;
         }
     }
