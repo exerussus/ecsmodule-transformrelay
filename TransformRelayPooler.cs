@@ -9,7 +9,7 @@ namespace ECS.Modules.Exerussus.TransformRelay
 {
     public class TransformRelayPooler : IGroupPooler
     {
-        public void Initialize(EcsWorld world)
+        public virtual void Initialize(EcsWorld world)
         {
             Transform = new PoolerModule<TransformRelayData.Transform>(world);
         }
