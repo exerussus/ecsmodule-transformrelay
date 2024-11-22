@@ -1,6 +1,6 @@
 {
   "name": "com.exerussus.ecsmodule.transformrelay",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "displayName": "Transform Relay",
   "description": "Модуль для 1EasyEcs",
   "unity": "2020.3",

@@ -2,6 +2,7 @@
 using ECS.Modules.Exerussus.TransformRelay.Systems;
 using Exerussus._1EasyEcs.Scripts.Core;
 using Exerussus._1EasyEcs.Scripts.Custom;
+using Exerussus._1Extensions.SmallFeatures;
 using Leopotam.EcsLite;
 
 namespace ECS.Modules.Exerussus.TransformRelay
